@@ -17,13 +17,11 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_CLIENTE")
     private Long idCliente;
-    @Column(name = "NOMBRES")
+    @Column(name = "NOMBRES", nullable = false,length = 100)
     private String nombres;
-    @Size(max = 80)
-    @Column(name = "APELLIDO")
+    @Column(name = "APELLIDO", nullable = false,length = 80)
     private String apellido;
-    @Column(name = "CELULAR")
-    @Size(max = 15)
+    @Column(name = "CELULAR",length = 15)
     private String celular;
     @Column(name = "CALLE")
     private String calle;
@@ -38,9 +36,9 @@ public class Cliente {
     @Column(name = "PISO")
     private String piso;
     //correo no puede ser nulo.
-    @Column(name = "CORREO_ELECTRONICO", nullable = false)
+    @Column(name = "CORREO_ELECTRONICO", unique = true)
     private String correoElectronico;
-    @Column(name = "TELEFONO_LINEA")
+    @Column(name = "TELEFONO_LINEA", length = 15)
     private String telefonoLinea;
     @ManyToMany(mappedBy = "clienteAsociado")
     @JoinTable(

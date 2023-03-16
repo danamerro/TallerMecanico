@@ -21,7 +21,7 @@ public class Vehiculo {
     private String color;
     @Column(name="MODELO")
     private String modelo;
-    @Column(name = "PATENTE", nullable = false)
+    @Column(name = "PATENTE", unique = true)
     private String patente;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Cliente> clienteAsociado;

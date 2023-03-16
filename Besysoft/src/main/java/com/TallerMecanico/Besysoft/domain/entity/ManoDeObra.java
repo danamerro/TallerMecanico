@@ -13,16 +13,16 @@ import java.util.Date;
 public class ManoDeObra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MANO_DE_OBRA")
-    private Long manoDeObraId;
+    @Column(name = "ID_MANO_DE_OBRA")
+    private Long IdManoDeObra;
     @Column(name = "DETALLE")
     private String detalle;
     @Column(name = "DURACION_HS")
     private Date duracionHs;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Mecanico mecanicoAsociado;
     //porque es una mano de obra a una orden de trabajo
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private OrdenDeTrabajo manoDeObraAsociada;
 
 }

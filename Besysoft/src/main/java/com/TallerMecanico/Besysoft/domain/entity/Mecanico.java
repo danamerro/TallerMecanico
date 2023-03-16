@@ -21,8 +21,7 @@ public class Mecanico {
     private String nombres;
     @Column(name = "APELLIDO")
     private String apellido;
-    @Column(name = "CELULAR")
-    @Size(max = 15)
+    @Column(name = "CELULAR",length = 15)
     private String celular;
     @Column(name = "CALLE")
     private String calle;
